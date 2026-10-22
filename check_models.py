@@ -7,4 +7,3 @@ print("--- SUPPORTED MODELS FOR YOUR API KEY ---")
 # List all models available to your account
 for model in client.models.list():
     print(model.name)
-    
