@@ -1,0 +1,23 @@
+# 1. Raw IP traffic log (simulated)
+ip_logs = [
+    "192.168.1.50", "10.0.0.1", "192.168.1.50", 
+    "172.16.0.4", "192.168.1.50", "10.0.0.1"
+]
+
+# 2. Dictionary to track counts
+ip_counts = {}
+
+# 3. Process each IP
+for ip in ip_logs:
+    if ip in ip_counts:
+        ip_counts[ip] += 1
+    else:
+        ip_counts[ip] = 1
+
+# CHALLENGE: Write a loop below to print only IPs that appeared MORE THAN 1 time.
+# Hint: Loop through ip_counts.items() using `for ip, count in ip_counts.items():`
+
+# --- YOUR CODE HERE ---
+for ip, count in ip_counts.items():
+    if count > 2:
+        print(f"Suspicious IP detected: {ip} (Count: {count})")
